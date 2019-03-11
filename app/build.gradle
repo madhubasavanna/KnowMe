@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+def GOOGLE_API_KEY = '"'+ GoogleApiKey + '"' ?: '"Define Google Api key'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.madhubasavanna.knowme"
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'GoogleApiKey', GOOGLE_API_KEY
+
+        manifestPlaceholders = [ // this is used for defining the variable for manifest file
+                                 GOOGLE_API_KEY : GOOGLE_API_KEY ]
+    }
+    buildTypes {
+        paid{
+            applicationIdSuffix ".paid"
+        }
+        free{
+            applicationIdSuffix ".free"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+}
