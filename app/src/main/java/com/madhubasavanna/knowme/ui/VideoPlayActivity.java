@@ -9,11 +9,11 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.api.services.youtube.model.SearchResult;
+import com.madhubasavanna.knowme.MainActivity;
 import com.madhubasavanna.knowme.R;
 import com.madhubasavanna.knowme.youtubedata.LoadVideoAsyncTask;
 import com.madhubasavanna.knowme.youtubedata.VideoDetails;
 import com.madhubasavanna.youtubedatalibrary.Authentication.ApiKeys;
-import com.madhubasavanna.youtubedatalibrary.YouTubeDataSearch;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -133,4 +133,11 @@ public class VideoPlayActivity extends YouTubeBaseActivity implements YouTubePla
 
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

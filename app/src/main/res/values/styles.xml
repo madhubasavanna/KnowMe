@@ -8,4 +8,25 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyActionBar"
+        parent="android:TextAppearance">
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+    </style>
+
+    <style name="MyToolBarTitleText" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MyTabLayoutTitleText" parent="android:TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="VideoDetailsText" parent="android:TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="UserProfileStyle" parent="android:TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>

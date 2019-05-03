@@ -1,1 +1,1 @@
-include ':app', ':YouTubeDataLibrary'
+include ':app', ':YouTubeDataLibrary', ':WikipediaDataLibrary'

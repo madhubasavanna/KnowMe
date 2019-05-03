@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Know Me</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search great personalities</string>
+    <string name="search_video_height">152dp</string>
+    <string name="default_margin">16dp</string>
+    <string name="appbar_elevation">4dp</string>
+    <string name="video_thumbnail">Video Thumbnail</string>
+    <string name="celebrity_photo">Celebrity Photo</string>
+    <string name="user_name">Name</string>
+    <string name="favourites_text">Favourites</string>
+    <string name="help_text">Help</string>
+    <string name="about_us_text">About us</string>
+    <string name="settings_text">Settings</string>
+    <string name="media_quality">Media Quality</string>
+    <string name="wifi_quality_text">Wifi Quality</string>
+    <string name="mobile_data_quality_text">MobileData Quality</string>
+    <string name="shared_preference">SharedPreference</string>
+    <string name="wifi_video_quality">WifiVideoQuality</string>
+    <string name="mobile_data_video_quality">MobileDataVideoQuality</string>
+
+    <string-array name="media_quality_array">
+        <item>144p</item>
+        <item>240p</item>
+        <item>360p</item>
+        <item>480p</item>
+        <item>720p</item>
+        <item>1080p</item>
+    </string-array>
 </resources>

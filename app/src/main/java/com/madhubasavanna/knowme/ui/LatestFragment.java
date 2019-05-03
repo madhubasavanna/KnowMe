@@ -1,9 +1,7 @@
 package com.madhubasavanna.knowme.ui;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.TestLooperManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +11,6 @@ import com.google.api.services.youtube.model.SearchResult;
 import com.madhubasavanna.knowme.R;
 import com.madhubasavanna.knowme.youtubedata.LoadVideoAsyncTask;
 import com.madhubasavanna.knowme.youtubedata.VideoDetails;
-import com.madhubasavanna.youtubedatalibrary.YouTubeDataSearch;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,13 +30,9 @@ public class LatestFragment extends Fragment implements VideoListAdapter.VideoCl
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.video_list_fragment, container, false);
+        View view = inflater.inflate(R.layout.video_list_view, container, false);
 
         videoListRecyclerView = view.findViewById(R.id.video_list_recyclerview);
-        //get the video list and add to the adapter
-        for(int i=0; i<=20; i++){
-            list.add((int )(Math.random() * 50 + 1));
-        }
         videoListData = getVideolist();
         if(videoListData != null){
             VideoListAdapter videoListAdapter = new VideoListAdapter(videoListData,this, getContext());

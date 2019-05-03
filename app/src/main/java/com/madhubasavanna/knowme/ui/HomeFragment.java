@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.api.services.youtube.model.SearchResult;
+import com.madhubasavanna.knowme.MainActivity;
 import com.madhubasavanna.knowme.R;
 import com.madhubasavanna.knowme.youtubedata.LoadVideoAsyncTask;
 import com.madhubasavanna.knowme.youtubedata.VideoDetails;
@@ -22,21 +23,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class HomeFragment extends Fragment implements VideoListAdapter.VideoClickListener {
+public class HomeFragment extends Fragment implements VideoListAdapter.VideoClickListener, MainActivity.OnAboutDataReceivedListener {
 
     private RecyclerView videoListRecyclerView;
     private List<SearchResult> videoListData;
+    private String searchText = null;
+    public MainActivity mActivity;
     private List<Integer> list = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.video_list_fragment, container, false);
+        View view = inflater.inflate(R.layout.video_list_view, container, false);
 
         videoListRecyclerView = view.findViewById(R.id.video_list_recyclerview);
-        //get the video list and add to the adapter
-        for(int i=0; i<=20; i++){
-            list.add((int )(Math.random() * 50 + 1));
-        }
+        mActivity = (MainActivity) getActivity();
+        mActivity.setAboutDataListener(this);
         videoListData = getVideoList();
         //check weather data is obtained from youtube api or not, if not available set "no data retrieved message"
         if(videoListData != null){
@@ -53,9 +54,14 @@ public class HomeFragment extends Fragment implements VideoListAdapter.VideoClic
         return view;
     }
 
+    @Override
+    public void onDataReceived(String searchtext) {
+        this.searchText = searchtext;
+    }
+
     private List<SearchResult> getVideoList() {
         LoadVideoAsyncTask task = new LoadVideoAsyncTask();
-        task.execute("searchByKeyword","larry page");
+        task.execute("searchByKeyword",searchText);
         try{
             return task.get();
         }catch (InterruptedException | ExecutionException e){

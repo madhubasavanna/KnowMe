@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     public ViewPagerAdapter(FragmentManager supportFragmentManager) {
         super(supportFragmentManager);
+
+
     }
 
     @Override

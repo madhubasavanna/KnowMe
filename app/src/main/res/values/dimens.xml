@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appbar_dimen">40dp</dimen>
+    <dimen name="video_details_text">15sp</dimen>
+    <dimen name="dropdownitem_icon_width">32dip</dimen>
+</resources>

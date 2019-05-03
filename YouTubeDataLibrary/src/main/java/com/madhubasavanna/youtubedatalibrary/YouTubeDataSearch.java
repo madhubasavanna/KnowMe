@@ -60,7 +60,9 @@ public class YouTubeDataSearch {
             // argument is required, but since we don't need anything
             // initialized when the HttpRequest is initialized, we override
             // the interface and provide a no-op function.
-            youtube = new YouTube.Builder(Auth.HTTP_TRANSPORT, Auth.JSON_FACTORY, (HttpRequest request) -> {
+            youtube = new YouTube.Builder(Auth.HTTP_TRANSPORT, Auth.JSON_FACTORY, new HttpRequestInitializer() {
+                public void initialize(HttpRequest request) {
+                }
             }).setApplicationName("KnowMe").build();
 
             // Prompt the user to enter a query term.
@@ -107,8 +109,11 @@ public class YouTubeDataSearch {
     public static List<SearchResult> getRelatedVideoResult(String videoId) {
 
         List<SearchResult> searchRelatedVideoList = null;
-        try {
-            youtube = new YouTube.Builder(Auth.HTTP_TRANSPORT, Auth.JSON_FACTORY, (HttpRequest request) -> {
+        try { youtube = new YouTube.Builder(Auth.HTTP_TRANSPORT, Auth.JSON_FACTORY, new HttpRequestInitializer() {
+                @Override
+                public void initialize(HttpRequest request) throws IOException {
+
+                }
             }).setApplicationName("KnowMe").build();
 
             // Define the API request for retrieving search results.
