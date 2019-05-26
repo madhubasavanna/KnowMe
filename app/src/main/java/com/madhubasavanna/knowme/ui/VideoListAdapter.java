@@ -27,7 +27,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Numb
     private final VideoClickListener videoClickListener;
 
     public interface VideoClickListener{
-        void onVideoClick(VideoDetails videoDetails);
+        void onVideoClick(String  videoId);
     }
 
     VideoListAdapter(List<SearchResult> videoslist,VideoClickListener videoClickListener, Context context){
@@ -82,7 +82,8 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Numb
 
         @Override
         public void onClick(View v) {
-            videoClickListener.onVideoClick(videoDetails);
+            ResourceId resourceId = videoList.get(getAdapterPosition()).getId();
+            videoClickListener.onVideoClick(resourceId.getVideoId());
         }
     }
 }

@@ -22,8 +22,7 @@ def YOUTUBE_API_KEY =  GoogleApiKey ?: '"Define YouTube Api key'
 allprojects {
     repositories {
         google()
-        jcenter()
-        
+        maven { url "http://jcenter.bintray.com"}
     }
     configurations {
         buildConfig {

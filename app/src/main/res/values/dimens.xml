@@ -3,4 +3,18 @@
     <dimen name="appbar_dimen">40dp</dimen>
     <dimen name="video_details_text">15sp</dimen>
     <dimen name="dropdownitem_icon_width">32dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="thumbnail">40dp</dimen>
+    <dimen name="row_padding">10dp</dimen>
+    <dimen name="wiki_user_name">15sp</dimen>
+    <dimen name="wiki_user_add_btn">12dp</dimen>
+    <dimen name="dimen_10">10sp</dimen>
+    <dimen name="dimen_20">20sp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
 </resources>

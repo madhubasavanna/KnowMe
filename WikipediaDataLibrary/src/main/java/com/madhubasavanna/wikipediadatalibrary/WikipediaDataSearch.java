@@ -4,9 +4,11 @@ import com.madhubasavanna.wikipediadatalibrary.jsonimageurlclasses.ImageUrlRespo
 import com.madhubasavanna.wikipediadatalibrary.jsonpagecontentclasses.ContentResponse;
 import com.madhubasavanna.wikipediadatalibrary.jsonsearchclass.SearchResponse;
 
+import io.reactivex.Single;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -23,6 +25,7 @@ public class WikipediaDataSearch {
         if (postService == null){
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(url)
+                    .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 
@@ -30,14 +33,23 @@ public class WikipediaDataSearch {
         }
         return postService;
     }
+
     public interface PostService{
         @GET("api.php?" + searchList)
         Call<SearchResponse> getSearchList(@Query("srsearch") String name);
 
         @GET("api.php?" + imageUrl)
-        Call<ImageUrlResponse> getImageUrl(@Query("titles") String title);
+        Call<String> getImageUrl(@Query("titles") String title);
 
         @GET("api.php?" + contentUrl)
         Call<ContentResponse> getContent(@Query("titles") String title);
+    }
+
+    public interface ApiService{
+        @GET("api.php?" + searchList)
+        Single<SearchResponse> getSearchList(@Query("srsearch") String name);
+
+        @GET("api.php?" + imageUrl)
+        Call<String> getImageUrl(@Query("titles") String title);
     }
 }

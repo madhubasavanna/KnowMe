@@ -54,9 +54,9 @@ public class VideoPlayActivity extends YouTubeBaseActivity implements YouTubePla
     }
 
     @Override
-    public void onVideoClick(VideoDetails videoDetails) {
+    public void onVideoClick(String videoId) {
         Intent intent = new Intent(this, VideoPlayActivity.class);
-        intent.putExtra("videoId", videoDetails.getVideoId());
+        intent.putExtra("videoId", videoId);
         startActivity(intent);
     }
 

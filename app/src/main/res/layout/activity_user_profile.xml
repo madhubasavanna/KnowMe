@@ -29,16 +29,30 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/user_name_text_view"
-            style="@style/UserProfileStyle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_name"
-            android:text="Madhu Patel" />
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/user_name_text_view"
+                style="@style/UserProfileStyle"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="wrap_content"
+                android:hint="@string/user_name"
+                tools:text="Madhu Patel"/>
+            <Button
+                android:id="@+id/save_user_name_btn"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="@string/save_user_name_btn"/>
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/favourite_list_text_view"
+            android:visibility="gone"
             style="@style/UserProfileStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,19 +61,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/setting_text_view"
                 style="@style/UserProfileStyle"
-                android:layout_width="1dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
                 android:text="@string/settings_text" />
 
             <ImageView
                 android:id="@+id/settings_dropdown_image_view"
-                android:layout_width="1dp"
+                android:visibility="visible"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@mipmap/ic_down_arrow" />

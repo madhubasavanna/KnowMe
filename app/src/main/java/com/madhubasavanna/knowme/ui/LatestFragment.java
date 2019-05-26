@@ -59,9 +59,9 @@ public class LatestFragment extends Fragment implements VideoListAdapter.VideoCl
     }
 
     @Override
-    public void onVideoClick(VideoDetails videoDetails) {
+    public void onVideoClick(String videoId) {
         Intent intent = new Intent(getActivity(), VideoPlayActivity.class);
-        intent.putExtra("videoId", videoDetails.getVideoId());
+        intent.putExtra("videoId", videoId);
         startActivity(intent);
     }
 }

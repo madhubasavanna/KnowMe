@@ -13,7 +13,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.UserProfileActivity"></activity>
+        <service
+            android:name=".KnowMeWidgetService"
+            android:exported="false"></service>
+
+        <receiver android:name=".KnowMeWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/know_me_widget_info" />
+        </receiver>
+
+        <activity
+            android:name=".ui.UserPreferenceActivity"
+            android:label="@string/title_activity_user_preference"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.SearchableActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.UserProfileActivity" />
 
         <meta-data
             android:name="android.app.searchable"

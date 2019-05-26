@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Know Me</string>
     <string name="search_title">Search</string>
-    <string name="search_hint">Search great personalities</string>
+    <string name="search_hint">Search a personality</string>
     <string name="search_video_height">152dp</string>
     <string name="default_margin">16dp</string>
     <string name="appbar_elevation">4dp</string>
@@ -18,6 +18,9 @@
     <string name="shared_preference">SharedPreference</string>
     <string name="wifi_video_quality">WifiVideoQuality</string>
     <string name="mobile_data_video_quality">MobileDataVideoQuality</string>
+    <string name="add_btn">Follow</string>
+    <string name="save_user_name_btn">Save</string>
+    <string name="preference_activity_title">My Preferences</string>
 
     <string-array name="media_quality_array">
         <item>144p</item>
@@ -27,4 +30,12 @@
         <item>720p</item>
         <item>1080p</item>
     </string-array>
+    <string name="title_activity_searchable">SearchableActivity</string>
+    <string name="title_activity_user_preference">UserPreferenceActivity</string>
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_preferences">Preferences</string>
+    <string name="bottom_nav_profile">Profile</string>
+    <string name="appwidget_text">"Preferences"</string>
+    <string name="appwidget_content_description">User Preference</string>
+    <string name="add_widget">Add widget</string>
 </resources>

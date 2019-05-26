@@ -2,6 +2,8 @@
 package com.madhubasavanna.wikipediadatalibrary.jsonimageurlclasses;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -12,22 +14,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "imagedetails"
 })
 public class Pages {
 
-    @JsonProperty("imagedetails")
     private ImageDetails imageDetails;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("imagedetails")
-    public ImageDetails getimagedetails() {
+    public ImageDetails getImageDetails() {
         return imageDetails;
     }
 
-    @JsonProperty("imagedetails")
-    public void setimagedetails(ImageDetails imageDetails) {
+    public void setImageDetails(ImageDetails imageDetails) {
         this.imageDetails = imageDetails;
     }
 

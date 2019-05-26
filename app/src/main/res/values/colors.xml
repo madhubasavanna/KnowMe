@@ -10,6 +10,7 @@
     <color name="colorAccent">#d53021</color>
     <color name="colorSecondaryLight">#ff664b</color>
     <color name="colorSecondaryDark">#9c0000</color>
+    <color name="wiki_data_name">#333333</color>
 
     <color name="material_light_primary_text">#DE000000</color>
     <color name="material_light_hint_text">#61000000</color>
